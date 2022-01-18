@@ -11,10 +11,14 @@ class Pet:
 
 class Cat(Pet):
     def __init__(self, name, age, color):
+        super().__init__(name, age)
         self.color = color
 
     def speak(self):
         print("Meow")
+
+    def show(self):
+        print(f"I am {self.name} and I am {self.age} years old and I am {self.color}")
 
 class Dog(Pet):
     def speak(self):
@@ -26,8 +30,8 @@ class Fish(Pet):
 
 p = Pet("Tim", 19)
 p.speak()
-c = Cat("Bill", 34)
-c.speak()
+c = Cat("Bill", 34, "Red")
+c.show()
 d = Dog("Jill", 25)
 d.speak()
 f = Fish("Bubbles", 10)
